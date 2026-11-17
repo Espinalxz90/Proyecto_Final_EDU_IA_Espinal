@@ -1,0 +1,59 @@
+@startuml
+
+class Modulo {
+    -idModulo: int
+    -titulo: string
+    -descripcion: string
+    -orden: int
+    --
+    +mostrarModulo()
+}
+
+class Tema {
+    -idTema: int
+    -titulo: string
+    -contenido: string
+    -fechaActualizacion: datetime
+    --
+    +mostrarContenido()
+}
+
+class Pregunta {
+    -idPregunta: int
+    -enunciado: string
+    -opcionA: string
+    -opcionB: string
+    -opcionC: string
+    -respuestaCorrecta: char
+    --
+    +validarRespuesta()
+}
+
+class Usuario {
+    --
+    +explorarModulos()
+    +buscarTema()
+    +leerTema()
+    +realizarAutoevaluacion()
+}
+
+class Administrador {
+    -idAdmin: int
+    -nombre: string
+    -correo: string
+    -password: string
+    --
+    +iniciarSesion()
+    +agregarTema()
+    +editarTema()
+    +eliminarTema()
+}
+
+Modulo "1" --> "n" Tema : contiene
+Modulo "1" --> "n" Pregunta : evalua
+Usuario ..> Modulo : consulta
+Usuario ..> Tema : lee
+Usuario ..> Pregunta : responde
+Administrador "1" --> "n" Tema : gestiona
+
+@enduml
