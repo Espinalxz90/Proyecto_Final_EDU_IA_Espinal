@@ -1,4 +1,4 @@
-# PLataforma Educativa EDU_IA
+# Plataforma Educativa EDU_IA
 
 Proyecto final de Ingenieria de Software bajo la metodología SCRUM
 
